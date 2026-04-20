@@ -34,7 +34,6 @@
     <h2 class="combo-title">Доступные для заказа комбо</h2>
     
     <div class="combo-grid">
-        <!-- Вариант 1 -->
         <div class="combo-variant">
             <div class="combo-item"><img src="icons/soup.png" alt="Суп"><span>Суп</span></div>
             <div class="combo-item"><img src="icons/main.png" alt="Главное блюдо"><span>Главное блюдо</span></div>
@@ -42,45 +41,38 @@
             <div class="combo-item"><img src="icons/drink.png" alt="Напиток"><span>Напиток</span></div>
         </div>
 
-        <!-- Вариант 2 -->
         <div class="combo-variant">
             <div class="combo-item"><img src="icons/soup.png" alt="Суп"><span>Суп</span></div>
             <div class="combo-item"><img src="icons/main.png" alt="Главное блюдо"><span>Главное блюдо</span></div>
             <div class="combo-item"><img src="icons/drink.png" alt="Напиток"><span>Напиток</span></div>
         </div>
 
-        <!-- Вариант 3 -->
         <div class="combo-variant">
             <div class="combo-item"><img src="icons/soup.png" alt="Суп"><span>Суп</span></div>
             <div class="combo-item"><img src="icons/salad.png" alt="Салат"><span>Салат</span></div>
             <div class="combo-item"><img src="icons/drink.png" alt="Напиток"><span>Напиток</span></div>
         </div>
 
-        <!-- Вариант 4 -->
         <div class="combo-variant">
             <div class="combo-item"><img src="icons/main.png" alt="Главное блюдо"><span>Главное блюдо</span></div>
             <div class="combo-item"><img src="icons/salad.png" alt="Салат"><span>Салат</span></div>
             <div class="combo-item"><img src="icons/drink.png" alt="Напиток"><span>Напиток</span></div>
         </div>
 
-        <!-- Вариант 5 -->
         <div class="combo-variant">
             <div class="combo-item"><img src="icons/main.png" alt="Главное блюдо"><span>Главное блюдо</span></div>
             <div class="combo-item"><img src="icons/drink.png" alt="Напиток"><span>Напиток</span></div>
         </div>
 
-        <!-- Десерт -->
         <div class="combo-variant dessert-combo">
             <div class="combo-item"><img src="icons/desert.png" alt="Десерт"><span>Десерт</span></div>
             <p class="dessert-info">(Можно добавить к любому заказу)</p>
         </div>
     </div>
 </section>
- <!-- Секция супов -->
         <section class="category" id="soup">
             <h2>Выберите суп</h2>
             
-            <!-- Блок фильтров для супов -->
             <div class="filters">
                 <button class="filter-btn" data-kind="fish" data-category="soup">рыбный</button>
                 <button class="filter-btn" data-kind="meat" data-category="soup">мясной</button>
@@ -88,15 +80,13 @@
             </div>
             
             <div class="dishes-container" id="soup-dishes">
-                <!-- Блюда будут добавляться через JS -->
+
             </div>
         </section>
 
-        <!-- Секция главных блюд -->
         <section class="category" id="main">
             <h2>Выберите главное блюдо</h2>
             
-            <!-- Блок фильтров для главных блюд -->
             <div class="filters">
                 <button class="filter-btn" data-kind="fish" data-category="main">рыбное</button>
                 <button class="filter-btn" data-kind="meat" data-category="main">мясное</button>
@@ -104,15 +94,13 @@
             </div>
             
             <div class="dishes-container" id="main-dishes">
-                <!-- Блюда будут добавляться через JS -->
+
             </div>
         </section>
 
-        <!-- НОВАЯ СЕКЦИЯ: Салаты и стартеры -->
         <section class="category" id="salad">
             <h2>Выберите салат или стартер</h2>
             
-            <!-- Блок фильтров для салатов -->
             <div class="filters">
                 <button class="filter-btn" data-kind="fish" data-category="salad">рыбный</button>
                 <button class="filter-btn" data-kind="meat" data-category="salad">мясной</button>
@@ -120,30 +108,26 @@
             </div>
             
             <div class="dishes-container" id="salad-dishes">
-                <!-- Блюда будут добавляться через JS -->
+
             </div>
         </section>
 
-        <!-- Секция напитков -->
         <section class="category" id="drink">
             <h2>Выберите напиток</h2>
             
-            <!-- Блок фильтров для напитков -->
             <div class="filters">
                 <button class="filter-btn" data-kind="cold" data-category="drink">холодный</button>
                 <button class="filter-btn" data-kind="hot" data-category="drink">горячий</button>
             </div>
             
             <div class="dishes-container" id="drink-dishes">
-                <!-- Блюда будут добавляться через JS -->
+
             </div>
         </section>
 
-        <!-- НОВАЯ СЕКЦИЯ: Десерты -->
         <section class="category" id="dessert">
             <h2>Выберите десерт</h2>
             
-            <!-- Блок фильтров для десертов -->
             <div class="filters">
                 <button class="filter-btn" data-kind="small" data-category="dessert">маленькая порция</button>
                 <button class="filter-btn" data-kind="medium" data-category="dessert">средняя порция</button>
@@ -151,7 +135,7 @@
             </div>
             
             <div class="dishes-container" id="dessert-dishes">
-                <!-- Блюда будут добавляться через JS -->
+
             </div>
         </section>
 
@@ -167,12 +151,11 @@
 <footer>
     <p>Позвонить нам <a href="tel:+70000000000">+7-000-000-00-00</a></p>
 </footer>
-<!-- Подключаем скрипты -->
+
 <script src="dishes.js"></script>
 <script src="filters.js"></script>
 <script src="displayDishes.js"></script>
 <script src="orderManager.js"></script>
-<!--<script src="orderCalculator.js"></script> -->
 </body>
 
 </html>

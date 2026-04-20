@@ -1,4 +1,3 @@
-// orders.js
 const API_KEY = '3a511289-43b6-49a8-82f3-00decaa84995'; 
 const BASE_URL = 'https://edu.std-900.ist.mospolytech.ru/labs/api';
 
@@ -26,25 +25,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupModalEvents();
 });
 
-// Инициализация
 document.addEventListener('DOMContentLoaded', async () => {
     await loadDishes();
     await loadOrders();
     setupModalEvents();
 });
 
-// 1. Загрузка справочника блюд
 async function loadDishes() {
     const res = await fetch(`${BASE_URL}/dishes`);
     allDishes = await res.json();
 }
 
-// 2. Загрузка заказов пользователя
 async function loadOrders() {
     try {
         const res = await fetch(`${BASE_URL}/orders?api_key=${API_KEY}`);
         allOrders = await res.json();
-        // Сортировка: новые сверху
         allOrders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         renderTable();
     } catch (err) {
@@ -52,7 +47,6 @@ async function loadOrders() {
     }
 }
 
-// 3. Отрисовка таблицы
 function renderTable() {
     const tbody = document.getElementById('orders-tbody');
     tbody.innerHTML = '';
@@ -62,7 +56,6 @@ function renderTable() {
             day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit'
         });
 
-        // Собираем состав заказа по ID
         const dishIds = [order.soup_id, order.main_course_id, order.salad_id, order.drink_id, order.dessert_id];
         const names = dishIds
             .map(id => allDishes.find(d => d.id === id)?.name)
@@ -95,7 +88,6 @@ function calculatePrice(order) {
     return ids.reduce((sum, id) => sum + (allDishes.find(d => d.id === id)?.price || 0), 0);
 }
 
-// --- УПРАВЛЕНИЕ МОДАЛЬНЫМИ ОКНАМИ ---
 
 const overlay = document.getElementById('modal-overlay');
 const mTitle = document.getElementById('modal-title');
@@ -109,7 +101,6 @@ function setupModalEvents() {
 
 function closeModal() { overlay.classList.add('hidden'); }
 
-// ПРОСМОТР
 function viewOrder(id) {
     const order = allOrders.find(o => o.id === id);
     mTitle.textContent = 'Просмотр заказа';
@@ -126,7 +117,6 @@ function viewOrder(id) {
     overlay.classList.remove('hidden');
 }
 
-// РЕДАКТИРОВАНИЕ
 function editOrder(id) {
     const order = allOrders.find(o => o.id === id);
     mTitle.textContent = 'Редактирование заказа';
@@ -170,7 +160,6 @@ async function saveEdit(id) {
     } catch (err) { showToast('Ошибка при сохранении', 'error'); }
 }
 
-// УДАЛЕНИЕ
 function deleteConfirm(id) {
     mTitle.textContent = 'Удаление заказа';
     mBody.innerHTML = `<p>Вы уверены, что хотите удалить этот заказ?</p>`;

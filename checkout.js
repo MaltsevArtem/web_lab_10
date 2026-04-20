@@ -1,4 +1,4 @@
-const API_KEY = '3a511289-43b6-49a8-82f3-00decaa84995'; // ЗАМЕНИ НА СВОЙ КЛЮЧ
+const API_KEY = '3a511289-43b6-49a8-82f3-00decaa84995';
 const LS_KEY = 'food-construct-order';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -26,7 +26,6 @@ function renderOrder(ids, allDishes) {
                 total += dish.price;
                 summaryText.textContent = `${dish.name} ${dish.price}₽`;
                 
-                // Создаем карточку с кнопкой "Удалить"
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `
@@ -50,16 +49,14 @@ function removeFromOrder(category) {
     const ids = JSON.parse(localStorage.getItem(LS_KEY));
     ids[category] = null;
     localStorage.setItem(LS_KEY, JSON.stringify(ids));
-    location.reload(); // Перезагружаем, чтобы обновить список
+    location.reload();
 }
 
-// ОТПРАВКА ЗАКАЗА
 document.getElementById('final-order-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const ids = JSON.parse(localStorage.getItem(LS_KEY));
     const formData = new FormData(e.target);
 
-    // Проверка комбо перед отправкой (ЛР 6/8)
     if (!( (ids.soup && ids.main && ids.drink) || (ids.main && ids.drink) )) {
         alert('Ваш заказ не соответствует ни одному комбо. Пожалуйста, соберите комбо!');
         return;
@@ -74,7 +71,6 @@ document.getElementById('final-order-form').addEventListener('submit', async (e)
     orderData.append('delivery_time', formData.get('time'));
     orderData.append('comment', formData.get('comment'));
     
-    // Добавляем ID блюд
     if (ids.soup) orderData.append('soup_id', ids.soup);
     if (ids.main) orderData.append('main_course_id', ids.main);
     if (ids.salad) orderData.append('salad_id', ids.salad);
@@ -89,7 +85,7 @@ document.getElementById('final-order-form').addEventListener('submit', async (e)
 
         if (res.ok) {
             alert('Заказ успешно отправлен!');
-            localStorage.removeItem(LS_KEY); // Очищаем корзину
+            localStorage.removeItem(LS_KEY);
             window.location.href = 'index.html';
         } else {
             const data = await res.json();

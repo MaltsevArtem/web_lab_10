@@ -1,4 +1,3 @@
-/* Универсальный селектор для настройки box-sizing */
 * {
     box-sizing: border-box;
 }
@@ -6,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Применяем Google шрифт */
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
     display: flex;
@@ -14,7 +13,6 @@ body {
     min-height: 100vh;
 }
 
-/* Стили для шапки */
 header {
     padding: 20px 50px;
     margin-bottom: 20px;
@@ -31,7 +29,6 @@ nav {
     flex-wrap: wrap;
 }
 
-/* Стили для ссылок */
 nav a {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
@@ -40,12 +37,10 @@ nav a {
     transition: color 0.3s;
 }
 
-/* Эффект при наведении на ссылки */
 nav a:hover {
     color: #ff6b6b;
 }
 
-/* Основной контейнер */
 main {
     max-width: 1000px;
     margin: 0 auto;
@@ -62,7 +57,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Стили для изображения */
 img {
     width: 100%;
     height: auto;
@@ -76,7 +70,6 @@ p {
     margin-bottom: 10px;
 }
 
-/* Стили для списка */
 ul {
     padding-left: 20px;
 }
@@ -85,27 +78,25 @@ li {
     margin-bottom: 8px;
 }
 
-/* Стили для таблицы */
 table {
     width: 100%;
-    border-collapse: collapse; /* Обязательное свойство по заданию */
+    border-collapse: collapse;
     margin-top: 20px;
 }
 
 th, td {
-    border: 1px solid #ccc; /* Граница */
-    padding: 12px; /* Внутренние отступы */
-    text-align: left; /* Выравнивание текста */
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
 }
 
 th {
     background-color: #f9f9f9;
 }
 
-/* Стили для футера */
 footer {
-    background-color: black; /* Обязательно по заданию */
-    color: white; /* Обязательно по заданию */
+    background-color: black; 
+    color: white; 
     padding: 40px 50px;
     margin-top: 50px;
 }
@@ -159,7 +150,6 @@ footer a:hover {
     }
 }
 
-/* Стили для фильтров */
 .filters {
     display: flex;
     gap: 10px;
@@ -187,11 +177,10 @@ footer a:hover {
     border-color: #4CAF50;
 }
 
-/* Скрываем выпадающие списки, но оставляем их для работы формы */
 .form-block select {
     display: none;
 }
-/* Также можно скрыть их подписи (label) */
+
 .form-block label[for="soup"],
 .form-block label[for="main"],
 .form-block label[for="salad"],
@@ -201,7 +190,7 @@ footer a:hover {
 }
 
 .radio label {
-    display: inline-block !important; /* !important заставит их показаться */
+    display: inline-block !important;
     margin-left: 5px;
     cursor: pointer;
 }
@@ -217,13 +206,11 @@ footer a:hover {
     font-weight: bold;
 }
 
-/* Таблица заказов */
 .table-container { overflow-x: auto; margin-top: 20px; }
 table { width: 100%; border-collapse: collapse; background: white; }
 th, td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
 th { background: #f8f8f8; }
 
-/* Модальное окно */
 .modal-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center;
@@ -240,11 +227,9 @@ th { background: #f8f8f8; }
 .modal-footer { padding: 20px; border-top: 1px solid #eee; text-align: right; }
 .modal-footer button { margin-left: 10px; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
 
-/* Кнопки иконок */
 .action-btn { cursor: pointer; margin-right: 10px; font-size: 18px; text-decoration: none; color: #333; }
 .action-btn:hover { color: tomato; }
 
-/* Уведомления */
 #notification-container { position: fixed; top: 20px; right: 20px; z-index: 3000; }
 .toast { background: #333; color: white; padding: 15px 25px; border-radius: 5px; margin-bottom: 10px; animation: slideIn 0.3s; }
 @keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
